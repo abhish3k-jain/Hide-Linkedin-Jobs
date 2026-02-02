@@ -24,4 +24,4 @@ We do not sell, trade, or otherwise transfer your information to outside parties
 We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page. You are advised to review this Privacy Policy periodically for any changes.
 
 ## Contact Us
-If you have any questions about this Privacy Policy, please contact us via our [GitHub Repository](https://github.com/abhish3k-jain/Hide-Linkedin-Jobs).
+If you have any questions about this Privacy Policy, please contact us via our [GitHub Repository](https://github.com/abhish3k-jain/Hide-Linkedin-Jobs) or [email](mailto:abhish3k.design@gmail.com) us
