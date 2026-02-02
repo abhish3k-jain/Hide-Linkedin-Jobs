@@ -1,0 +1,16 @@
+{
+  "name": "hide-jobs-extension",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "iconoir": "^7.11.0",
+    "vite": "^7.3.1",
+    "vite-plugin-static-copy": "^3.1.6"
+  }
+}

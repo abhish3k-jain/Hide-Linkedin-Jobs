@@ -1,0 +1,32 @@
+/* Hide Promoted Jobs on LinkedIn - Styles */
+
+/* Mark promotional content (no visual change initially) */
+.lph-promotional-content {
+  transition: max-height 0.3s ease-out,
+              opacity 0.2s ease-out,
+              margin 0.3s ease-out,
+              padding 0.3s ease-out,
+              border 0.3s ease-out;
+}
+
+/* Hidden state with collapse animation */
+.lph-hidden {
+  max-height: 0 !important;
+  opacity: 0 !important;
+  overflow: hidden !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  border: none !important;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Ensure smooth reveal when unhiding */
+.lph-promotional-content:not(.lph-hidden) {
+  max-height: none;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}

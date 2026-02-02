@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hide Promoted Jobs on LinkedIn</title>
+  <link rel="stylesheet" href="sidepanel.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Disclaimer -->
+    <div class="disclaimer">
+      <svg class="disclaimer__icon" width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+        <path d="M12 8v4M12 16h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <span>If jobs aren't hiding, try refreshing the page or toggling the extension off/on.</span>
+    </div>
+
+    <!-- Header with toggle -->
+    <header class="header">
+      <div class="header__title">
+        <img src="../../icons/icon48.png" alt="Logo" class="header__logo">
+        <h1>Hide Promoted Jobs on LinkedIn</h1>
+      </div>
+      <div class="toggle-container">
+        <label class="toggle">
+          <input type="checkbox" id="enabledToggle" checked>
+          <span class="toggle__slider"></span>
+        </label>
+        <span class="toggle__label" id="toggleLabel">Enabled</span>
+      </div>
+    </header>
+
+    <!-- Hidden jobs section -->
+    <section class="jobs-section">
+      <h2 class="jobs-section__title">
+        Hidden Jobs
+        <span class="jobs-section__count" id="jobCount">(0)</span>
+      </h2>
+
+      <!-- Job list -->
+      <div class="jobs-list" id="jobsList"></div>
+
+      <!-- Empty state -->
+      <div class="empty-state" id="emptyState">
+        <div class="empty-state__icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 4.5C7 4.5 2.73 7.61 1 12C2.73 16.39 7 19.5 12 19.5C17 19.5 21.27 16.39 23 12C21.27 7.61 17 4.5 12 4.5ZM12 17C9.24 17 7 14.76 7 12C7 9.24 9.24 7 12 7C14.76 7 17 9.24 17 12C17 14.76 14.76 17 12 17ZM12 9C10.34 9 9 10.34 9 12C9 13.66 10.34 15 12 15C13.66 15 15 13.66 15 12C15 10.34 13.66 9 12 9Z" fill="currentColor"/>
+            <line x1="2" y1="22" x2="22" y2="2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <p class="empty-state__title">No promoted jobs hidden yet</p>
+        <p class="empty-state__text">Browse LinkedIn job listings and promoted jobs will automatically be hidden and listed here.</p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>Jobs are stored temporarily and clear on page refresh.</p>
+    </footer>
+  </div>
+
+  <script type="module" src="sidepanel.js"></script>
+</body>
+</html>

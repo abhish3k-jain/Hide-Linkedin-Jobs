@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hide Promoted Jobs on LinkedIn</title>
+  <script type="module" crossorigin src="../../src/sidepanel/sidepanel.js"></script>
+  <link rel="stylesheet" crossorigin href="../../src/sidepanel/sidepanel.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Disclaimer -->
+    <div class="disclaimer">
+      <svg class="disclaimer__icon" width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+        <path d="M12 8v4M12 16h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <span>If jobs aren't hiding, try refreshing the page or toggling the extension off/on.</span>
+    </div>
+
+    <!-- Header with toggle -->
+    <header class="header">
+      <div class="header__title">
+        <img src="data:image/png;base64,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" alt="Logo" class="header__logo">
+        <h1>Hide Promoted Jobs on LinkedIn</h1>
+      </div>
+      <div class="toggle-container">
+        <label class="toggle">
+          <input type="checkbox" id="enabledToggle" checked>
+          <span class="toggle__slider"></span>
+        </label>
+        <span class="toggle__label" id="toggleLabel">Enabled</span>
+      </div>
+    </header>
+
+    <!-- Hidden jobs section -->
+    <section class="jobs-section">
+      <h2 class="jobs-section__title">
+        Hidden Jobs
+        <span class="jobs-section__count" id="jobCount">(0)</span>
+      </h2>
+
+      <!-- Job list -->
+      <div class="jobs-list" id="jobsList"></div>
+
+      <!-- Empty state -->
+      <div class="empty-state" id="emptyState">
+        <div class="empty-state__icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 4.5C7 4.5 2.73 7.61 1 12C2.73 16.39 7 19.5 12 19.5C17 19.5 21.27 16.39 23 12C21.27 7.61 17 4.5 12 4.5ZM12 17C9.24 17 7 14.76 7 12C7 9.24 9.24 7 12 7C14.76 7 17 9.24 17 12C17 14.76 14.76 17 12 17ZM12 9C10.34 9 9 10.34 9 12C9 13.66 10.34 15 12 15C13.66 15 15 13.66 15 12C15 10.34 13.66 9 12 9Z" fill="currentColor"/>
+            <line x1="2" y1="22" x2="22" y2="2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <p class="empty-state__title">No promoted jobs hidden yet</p>
+        <p class="empty-state__text">Browse LinkedIn job listings and promoted jobs will automatically be hidden and listed here.</p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>Jobs are stored temporarily and clear on page refresh.</p>
+    </footer>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+(function(){const r=document.createElement("link").relList;if(r&&r.supports&&r.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))i(t);new MutationObserver(t=>{for(const o of t)if(o.type==="childList")for(const c of o.addedNodes)c.tagName==="LINK"&&c.rel==="modulepreload"&&i(c)}).observe(document,{childList:!0,subtree:!0});function s(t){const o={};return t.integrity&&(o.integrity=t.integrity),t.referrerPolicy&&(o.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?o.credentials="include":t.crossOrigin==="anonymous"?o.credentials="omit":o.credentials="same-origin",o}function i(t){if(t.ep)return;t.ep=!0;const o=s(t);fetch(t.href,o)}})();document.addEventListener("DOMContentLoaded",()=>{const a=document.getElementById("enabledToggle"),r=document.getElementById("toggleLabel"),s=document.getElementById("jobsList"),i=document.getElementById("emptyState"),t=document.getElementById("jobCount");o(),f(),setInterval(f,2e3),a.addEventListener("change",()=>{const e=a.checked;chrome.storage.sync.set({enabled:e},()=>{c(e)})});function o(){chrome.storage.sync.get(["enabled"],e=>{const n=e.enabled!==!1;a.checked=n,c(n)})}function c(e){r.textContent=e?"Enabled":"Disabled",r.classList.toggle("toggle__label--enabled",e)}async function f(){try{const n=(await chrome.tabs.query({active:!0,currentWindow:!0}))[0];if(!n||!n.url||!n.url.includes("linkedin.com")){d([]);return}chrome.tabs.sendMessage(n.id,{type:"getHiddenJobs"},l=>{if(chrome.runtime.lastError){d([]);return}l&&l.jobs?d(l.jobs):d([])})}catch{d([])}}function d(e){t.textContent=`(${e.length})`,e.length===0?(s.innerHTML="",s.style.display="none",i.style.display="flex"):(i.style.display="none",s.style.display="flex",s.innerHTML=e.map(n=>m(n)).join(""))}function m(e){const n=u(e.title),l=u(e.company);return e.url?`
+        <a href="${u(e.url)}" target="_blank" class="job-card">
+          <div class="job-card__title">${n}</div>
+          <div class="job-card__company">${l}</div>
+        </a>
+      `:`
+      <div class="job-card">
+        <div class="job-card__title">${n}</div>
+        <div class="job-card__company">${l}</div>
+      </div>
+    `}function u(e){const n=document.createElement("div");return n.textContent=e,n.innerHTML}});
